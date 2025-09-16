@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "8D863FCD-37F6-410F-819A-2768AE7721D8",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:VehicleCompanion.xcodeproj",
+        "identifier" : "AA85178E2E7975C10069FCED",
+        "name" : "VehicleCompanionTests"
+      }
+    }
+  ],
+  "version" : 1
+}
