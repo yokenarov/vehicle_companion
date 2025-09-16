@@ -1,18 +1,23 @@
 {
   "configurations" : [
     {
-      "id" : "8D863FCD-37F6-410F-819A-2768AE7721D8",
-      "name" : "Configuration 1",
+      "id" : "9861CFDB-7B04-4D4C-9319-B86F95DE8F95",
+      "name" : "Test Scheme Action",
       "options" : {
 
       }
     }
   ],
   "defaultOptions" : {
-    "testTimeoutsEnabled" : true
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:VehicleCompanion.xcodeproj",
+      "identifier" : "AA85177F2E7975BF0069FCED",
+      "name" : "VehicleCompanion"
+    }
   },
   "testTargets" : [
     {
+      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:VehicleCompanion.xcodeproj",
         "identifier" : "AA85178E2E7975C10069FCED",

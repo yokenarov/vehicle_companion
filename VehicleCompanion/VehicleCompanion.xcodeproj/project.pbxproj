@@ -27,7 +27,41 @@
 		AA8517AC2E7975E50069FCED /* VehicleCompanion.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = VehicleCompanion.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		AA4CCDE72E79868100A2F5A7 /* Exceptions for "Mocks" folder in "VehicleCompanionTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				MockURLProtocol.swift,
+				POIMock.swift,
+			);
+			target = AA85178E2E7975C10069FCED /* VehicleCompanionTests */;
+		};
+		AA4CCDEE2E798B2A00A2F5A7 /* Exceptions for "Networking" folder in "VehicleCompanionTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				POIRepositoryTests.swift,
+			);
+			target = AA85178E2E7975C10069FCED /* VehicleCompanionTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		AA4CCDE12E79866500A2F5A7 /* Mocks */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				AA4CCDE72E79868100A2F5A7 /* Exceptions for "Mocks" folder in "VehicleCompanionTests" target */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		AA4CCDEA2E798B1700A2F5A7 /* Networking */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				AA4CCDEE2E798B2A00A2F5A7 /* Exceptions for "Networking" folder in "VehicleCompanionTests" target */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		AA8517822E7975BF0069FCED /* VehicleCompanion */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = VehicleCompanion;
@@ -64,6 +98,8 @@
 		AA4CCDD22E79844A00A2F5A7 /* VehicleCompanionTests */ = {
 			isa = PBXGroup;
 			children = (
+				AA4CCDEA2E798B1700A2F5A7 /* Networking */,
+				AA4CCDE12E79866500A2F5A7 /* Mocks */,
 			);
 			name = VehicleCompanionTests;
 			sourceTree = "<group>";
@@ -407,7 +443,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WBF3NGZM3B;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yordan.kenarov.VehicleCompanionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -430,7 +466,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WBF3NGZM3B;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yordan.kenarov.VehicleCompanionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
