@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA4CCDCC2E7983F200A2F5A7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AA4CCDCB2E7983F200A2F5A7 /* Alamofire */; };
 		AA8517AD2E7975E50069FCED /* VehicleCompanion.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = AA8517AC2E7975E50069FCED /* VehicleCompanion.xctestplan */; };
 /* End PBXBuildFile section */
 
@@ -32,11 +33,6 @@
 			path = VehicleCompanion;
 			sourceTree = "<group>";
 		};
-		AA8517922E7975C10069FCED /* VehicleCompanionTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = VehicleCompanionTests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA4CCDCC2E7983F200A2F5A7 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,12 +54,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA4CCDCF2E7983FB00A2F5A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA4CCDD22E79844A00A2F5A7 /* VehicleCompanionTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = VehicleCompanionTests;
+			sourceTree = "<group>";
+		};
 		AA8517772E7975BF0069FCED = {
 			isa = PBXGroup;
 			children = (
 				AA8517AC2E7975E50069FCED /* VehicleCompanion.xctestplan */,
 				AA8517822E7975BF0069FCED /* VehicleCompanion */,
-				AA8517922E7975C10069FCED /* VehicleCompanionTests */,
+				AA4CCDCF2E7983FB00A2F5A7 /* Frameworks */,
+				AA4CCDD22E79844A00A2F5A7 /* VehicleCompanionTests */,
 				AA8517812E7975BF0069FCED /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +108,7 @@
 			);
 			name = VehicleCompanion;
 			packageProductDependencies = (
+				AA4CCDCB2E7983F200A2F5A7 /* Alamofire */,
 			);
 			productName = VehicleCompanion;
 			productReference = AA8517802E7975BF0069FCED /* VehicleCompanion.app */;
@@ -113,9 +126,6 @@
 			);
 			dependencies = (
 				AA8517912E7975C10069FCED /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				AA8517922E7975C10069FCED /* VehicleCompanionTests */,
 			);
 			name = VehicleCompanionTests;
 			packageProductDependencies = (
@@ -152,6 +162,9 @@
 			);
 			mainGroup = AA8517772E7975BF0069FCED;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				AA4CCDCA2E7983F200A2F5A7 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = AA8517812E7975BF0069FCED /* Products */;
 			projectDirPath = "";
@@ -463,6 +476,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AA4CCDCA2E7983F200A2F5A7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA4CCDCB2E7983F200A2F5A7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA4CCDCA2E7983F200A2F5A7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AA8517782E7975BF0069FCED /* Project object */;
 }
