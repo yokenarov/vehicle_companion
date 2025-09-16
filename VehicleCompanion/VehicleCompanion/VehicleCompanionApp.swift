@@ -12,7 +12,7 @@ import SwiftData
 struct VehicleCompanionApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            
+            Vehicle.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
