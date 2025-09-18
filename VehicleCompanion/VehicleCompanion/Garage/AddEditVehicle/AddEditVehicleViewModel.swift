@@ -10,8 +10,11 @@ import SwiftUI
 @Observable
 final class AddEditVehicleViewModel {
     var vehicle: Vehicle
-    init(vehicle: Vehicle) {
+    let vehicleFlow: VehicleFlow
+    init(vehicle: Vehicle,
+         vehicleFlow: VehicleFlow) {
         self.vehicle = vehicle
+        self.vehicleFlow = vehicleFlow
     }
 
     var canSaveVehicle: Bool {
