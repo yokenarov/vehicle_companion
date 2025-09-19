@@ -17,10 +17,12 @@ struct VCTabView: View {
             .tabItem {
                 Label(Tab.garage.title, systemImage: Tab.garage.image)
             }
-            Text(Tab.pois.title)
-                .tabItem {
-                    Label(Tab.pois.title, systemImage: Tab.pois.image)
-                }
+            NavigationStack {
+                POIListView()
+            }
+            .tabItem {
+                Label(Tab.pois.title, systemImage: Tab.pois.image)
+            }
         }
         .tint(.purple)
     }
