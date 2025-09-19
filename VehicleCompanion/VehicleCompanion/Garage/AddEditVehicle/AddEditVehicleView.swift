@@ -8,8 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum VehicleFlow: Identifiable {
-    var id: UUID { UUID() }
+enum VehicleFlow {
     case add
     case edit(existing: Vehicle)
 
@@ -28,6 +27,30 @@ enum VehicleFlow: Identifiable {
             "Save vehicle"
         case .edit:
             "Update"
+        }
+    }
+}
+
+extension VehicleFlow: Identifiable {
+    var id: String {
+        switch self {
+        case .add:
+            return "add"
+        case .edit(let existing):
+            return "edit-\(existing.vin)"
+        }
+    }
+}
+
+extension VehicleFlow: Equatable {
+    static func == (lhs: VehicleFlow, rhs: VehicleFlow) -> Bool {
+        switch (lhs, rhs) {
+        case (.add, .add):
+            return true
+        case let (.edit(existing1), .edit(existing2)):
+            return existing1.vin == existing2.vin
+        default:
+            return false
         }
     }
 }
@@ -59,31 +82,8 @@ private struct AddEditVehicleView: View {
             .background(.clear)
             .padding(.top, 24)
         Form {
-            ZStack {
-                if let avatarData = viewModel.vehicle.avatar,
-                   let uiImage = UIImage(data: avatarData) {
-                    Image(uiImage: uiImage)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 150, height: 150)
-                        .clipShape(Circle())
-                        .shadow(radius: 5)
-                        .onTapGesture { showingImagePicker = true }
-                } else {
-                    Circle()
-                        .fill(Color.gray.opacity(0.3))
-                        .frame(width: 150, height: 150)
-                        .overlay(
-                            Text("Tap to select image")
-                                .foregroundColor(.gray)
-                                .font(.caption)
-                        )
-                        .onTapGesture { showingImagePicker = true }
-                }
-            }
-            .frame(maxWidth: .infinity, alignment: .center)
-            .padding(.vertical)
-            Group {
+            AvatarView(imageData: viewModel.vehicle.avatar)
+                .onTapGesture { showingImagePicker = true }
                 Section(header: Text("Vehicle Info")) {
                     TextField("Name", text: $viewModel.vehicle.name)
                     TextField("Make", text: $viewModel.vehicle.make)
@@ -96,15 +96,12 @@ private struct AddEditVehicleView: View {
                 Section(header: Text("Fuel Type")) {
                     Picker("Fuel Type", selection: $viewModel.vehicle.fuelType) {
                         ForEach(Vehicle.FuelType.allCases, id: \.self) { fuel in
-                            Text(fuel.displayName).tag(fuel)
+                            Text(fuel.displayName)
+                                .tag(fuel)
                         }
                     }
                     .pickerStyle(.segmented)
                 }
-            }
-            .onTapGesture {
-                hideKeyboard()
-            }
         }
         .padding(.bottom, 10)
         .scrollDismissesKeyboard(.interactively)
@@ -148,3 +145,4 @@ extension View {
         )
     }
 }
+

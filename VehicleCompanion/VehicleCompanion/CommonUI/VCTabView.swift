@@ -11,15 +11,18 @@ struct VCTabView: View {
     @State private var selectedTab: Tab = .garage
     var body: some View {
         TabView(selection: $selectedTab) {
-            Text(Tab.garage.title)
-                .tabItem {
-                    Label(Tab.garage.title, systemImage: Tab.garage.image)
-                }
+            NavigationStack {
+                GarageView()
+            }
+            .tabItem {
+                Label(Tab.garage.title, systemImage: Tab.garage.image)
+            }
             Text(Tab.pois.title)
                 .tabItem {
                     Label(Tab.pois.title, systemImage: Tab.pois.image)
                 }
         }
+        .tint(.purple)
     }
 }
 

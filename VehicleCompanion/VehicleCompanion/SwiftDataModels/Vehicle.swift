@@ -42,11 +42,21 @@ final class Vehicle: Identifiable, Equatable {
         fuelType = .other
     }
 
-    enum FuelType: Codable {
+    enum FuelType: Codable, CaseIterable {
         case gas
         case diesel
         case electric
         case hybrid
         case other
+    
+        var displayName: String {
+            switch self {
+            case .gas: return "Gas"
+            case .diesel: return "Diesel"
+            case .electric: return "Electric"
+            case .hybrid: return "Hybrid"
+            case .other: return "Other"
+            }
+        }
     }
 }
